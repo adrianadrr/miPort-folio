@@ -1,5 +1,5 @@
 {
-  "name": "extraterrestrial-ephemera",
+  "name": "miport-folio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,8 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.7.1",
     "@astrojs/check": "^0.6.0",
+    "@astrojs/cloudflare": "^11.0.1",
+    "astro": "^4.7.1",
     "typescript": "^5.4.5"
   }
 }

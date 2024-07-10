@@ -1,0 +1,157 @@
+<section class="section-content">
+	<h2 class="section-title">Certificaciones</h2>
+	<div class="carousel">
+		<div class="carousel-container">
+			<div class="carousel-slide">
+				<img src="/assets/certificado1.png" alt="Certificado de Product Management">
+			</div>
+			<div class="carousel-slide">
+				<img src="/assets/certificado2.png" alt="Certificado de UX UI">
+			</div>
+			<div class="carousel-slide">
+				<img src="/assets/certificado3.jpg" alt="Certificado de  Design">
+			</div>
+			<div class="carousel-slide">
+				<img src="/assets/certificado4.jpg" alt="Certificado de  Design2 ">
+			</div>
+			<div class="carousel-slide">
+				<img src="/assets/certificado5.jpg" alt="Certificado de negocio">
+			</div>
+			<div class="carousel-slide">
+				<img src="/assets/certificado6.jpg" alt="Certificado de Ux Design">
+			</div>
+		</div>
+		<button class="carousel-button prev">&#10094;</button>
+		<button class="carousel-button next">&#10095;</button>
+	</div>
+</section>
+<style>
+
+
+	.carousel {
+		position: relative;
+		max-width: 600px;
+		margin: 0 auto;
+		overflow: hidden;
+		background: var(--gray-999);
+		border-radius: 0.75rem;
+		box-shadow: var(--shadow-sm);
+	}
+
+	.carousel-container {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+	}
+
+	.carousel-slide {
+		min-width: 100%;
+	}
+
+	.carousel-slide img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+
+	.carousel-button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: var(--gray-999);
+		color: var(--gray-200);
+		border: none;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		font-size: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	.carousel-button:hover {
+		background: var(--gray-800);
+	}
+
+	.carousel-button.prev {
+		left: 10px;
+	}
+
+	.carousel-button.next {
+		right: 10px;
+	}
+
+	:root {
+		--background: var(--gray-0);
+		--text-color: var(--gray-800);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--background: var(--gray-900);
+			--text-color: var(--gray-200);
+		}
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		.section-content {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
+<script>
+	function setupCarousel() {
+	  const carousel = document.querySelector('.carousel-container') as HTMLElement;
+	  const slides = document.querySelectorAll('.carousel-slide');
+	  const prevButton = document.querySelector('.carousel-button.prev');
+	  const nextButton = document.querySelector('.carousel-button.next');
+  
+	  if (!carousel || slides.length === 0 || !prevButton || !nextButton) {
+		console.error('Elementos del carrusel no encontrados');
+		return;
+	  }
+  
+	  let currentIndex = 0;
+  
+	  function showSlide(index: number) {
+		carousel.style.transform = `translateX(-${index * 100}%)`;
+	  }
+  
+	  function nextSlide() {
+		currentIndex = (currentIndex + 1) % slides.length;
+		showSlide(currentIndex);
+	  }
+  
+	  function prevSlide() {
+		currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+		showSlide(currentIndex);
+	  }
+  
+	  nextButton.addEventListener('click', nextSlide);
+	  prevButton.addEventListener('click', prevSlide);
+  
+	  
+	  document.addEventListener('keydown', (e: KeyboardEvent) => {
+		if (e.key === 'ArrowRight') nextSlide();
+		if (e.key === 'ArrowLeft') prevSlide();
+	  });
+	}
+  
+
+	document.addEventListener('DOMContentLoaded', setupCarousel);
+  
+	
+	document.addEventListener('astro:page-load', setupCarousel);
+  </script>

@@ -1,8 +1,62 @@
 ---
 import Hero from '../components/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CallToAction from '../components/CallToAction.astro';
 ---
 
-<BaseLayout title="Not Found" description="404 Error — this page was not found">
-	<Hero title="Page Not Found" tagline="Not found" />
+<BaseLayout title="Página no encontrada" description="404 Error — Lo sentimos, la página que buscas no existe">
+	<Hero 
+		title="Oops! Página no encontrada" 
+		tagline="Parece que te has aventurado en territorio desconocido."
+	/>
+	<section class="container">
+		<div class="content">
+			<p>No te preocupes, a veces hasta las mejores ideas necesitan un poco de redirección. ¿Qué tal si exploramos juntos?</p>
+			<ul>
+				<li>Verifica la URL por errores de escritura.</li>
+				<li>Regresa a la <a href="/">página de inicio</a> para comenzar de nuevo.</li>
+				<li>Explora mi <a href="/work">portafolio</a> para ver mis proyectos más recientes.</li>
+				<li>¿Buscabas algo específico? Usa la barra de búsqueda en la parte superior.</li>
+			</ul>
+		</div>
+		<CallToAction href="/contact">
+			¿Necesitas ayuda? Contáctame
+		</CallToAction>
+	</section>
 </BaseLayout>
+
+<style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		max-width: 60ch;
+		margin: 0 auto;
+	}
+
+	.content {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	li {
+		margin-bottom: 1rem;
+	}
+
+	a {
+		color: var(--accent-regular);
+		text-decoration: none;
+		border-bottom: 1px solid currentColor;
+	}
+
+	a:hover {
+		color: var(--accent-dark);
+	}
+</style>

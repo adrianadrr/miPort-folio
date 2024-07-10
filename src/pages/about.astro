@@ -1,120 +1,155 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import Cert from '../components/Cert.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="Sobre Mí | Adriana Rodriguez" description="Conozca más sobre Adriana Rodriguez, Diseñadora de Productos Digitales y aspirante a Product Manager">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				title="Sobre Mí"
+				tagline="Descubra mi pasión por el diseño de productos digitales y mi camino autodidacta hacia la gestión de productos."
 			>
 				<img
 					width="1553"
 					height="873"
-					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
+					src="/assets/taller.jpg"
+					alt="Adriana Rodriguez impartiendo taller de integración"
 				/>
 			</Hero>
 
 			<section>
-				<h2 class="section-title">Background</h2>
+				<h2 class="section-title">Perfil Personal</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+						Soy una entusiasta Diseñadora de Productos Digitales con una creciente pasión por la gestión de productos. Mi viaje en el mundo del diseño y la tecnología comenzó de forma autodidacta, impulsada por la curiosidad y el deseo de crear experiencias digitales significativas.
 					</p>
 					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
+						A través de cursos en línea, proyectos personales y colaboraciones en comunidades de diseño, he desarrollado habilidades en UX/UI y estoy expandiendo mis conocimientos hacia la gestión de productos. Mi enfoque combina la creatividad del diseño con una comprensión emergente de las estrategias de producto.
 					</p>
 					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+						Mi objetivo es crecer profesionalmente en el campo del diseño de productos digitales, aplicando mis habilidades de diseño y mi perspectiva fresca para contribuir a proyectos innovadores y centrados en el usuario.
 					</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Education</h2>
+				<h2 class="section-title">Formación</h2>
 				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
+					<p>Escuela de Negocios - Platzy (en curso)</p>
+					<p>Curso de Habilidades Blandas - Platzy </p>
+					<p>Certificación en Diseño UX/UI Avanzado - CoderHouse</p>
+					<p>Certificación en Product Manager - CoderHouse</p>
+					<p>Certificación en Soporte IT - Google (Coursera)</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Skills</h2>
+				<h2 class="section-title">Habilidades en Desarrollo</h2>
 				<div class="content">
-					<p>officia unde omnis</p>
+					<ul>
+						<li>Diseño UX/UI</li>
+						<li>Habilidades de Liderazgo y Negociacíon</li>
+						<li>Prototipado y Wireframing</li>
+						<li>Investigación de Usuarios Avanzado</li>
+						<li>Fundamentos de Gestión de Productos</li>
+						<li>Herramientas de Diseño (Figma, Adobe XD)</li>
+						<li>Metodologías Ágiles (conceptos básicos)</li>
+						<li>Psicología y Sociología</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Proyectos Destacados</h2>
+				<div class="content">
+					<p>
+						He trabajado en varios proyectos personales y colaborativos que me han permitido aplicar y mejorar mis habilidades. Algunos ejemplos incluyen:
+					</p>
+					<ul>
+						<li>Rediseño de una app  Fintech (proyecto personal)</li>
+						<li>Diseño y desarrollo de Paginas Web para emprendedores locales</li>
+						<li>Desarrollo de un proyecto de un videojuego de mascotas para apoyar Ongs y proyectos ambientales en el mundo real (proyecto personal)</li>
+					</ul>
 				</div>
 			</section>
 		</main>
 
+		<Cert />
 		<ContactCTA />
 	</div>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+    }
+
+    img {
+        margin-top: 1.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-md);
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: var(--gray-200);
+    }
+
+    .section-title {
+        grid-column-start: 1;
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+    }
+
+    .content {
+        grid-column: 2 / 4;
+    }
+
+    .content :global(a) {
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
+
+    .content :global(a:hover),
+    .content :global(a:focus) {
+        text-decoration-color: currentColor;
+    }
+
+    @media (min-width: 50em) {
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 60% 1fr;
+        }
+
+        .about > :global(:first-child) {
+            grid-column-start: 2;
+        }
+
+        section {
+            display: contents;
+            font-size: var(--text-lg);
+        }
+    }
+	.content ul {
+		list-style-type: none;
+		padding: 0;
 	}
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+	.content ul li {
+		margin-bottom: 0.5em;
+		position: relative;
+		padding-left: 1.5em;
 	}
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
-
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
-
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
+	.content ul li::before {
+		content: "•";
+		color: var(--accent-regular);
+		position: absolute;
+		left: 0;
 	}
 </style>

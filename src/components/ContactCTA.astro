@@ -4,9 +4,10 @@ import Icon from './Icon.astro';
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
-	<CallToAction href="mailto:me@example.com">
-		Send Me a Message
+	<h2>¿Te gustaría colaborar juntos?</h2>
+	<p>Como Product Manager y diseñadora UX/UI, ofrezco servicios de diseño y desarrollo de productos digitales personalizados. ¡Hablemos sobre tu proyecto!</p>
+	<CallToAction href="mailto:rc21adri@gmail.com">
+		Envíame un Mensaje
 		<Icon icon="paper-plane-tilt" size="1.2em" />
 	</CallToAction>
 </aside>
@@ -16,18 +17,23 @@ import Icon from './Icon.astro';
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 3rem;
+		gap: 2rem;
 		border-top: 1px solid var(--gray-800);
 		border-bottom: 1px solid var(--gray-800);
 		padding: 5rem 1.5rem;
 		background-color: var(--gray-999_40);
 		box-shadow: var(--shadow-sm);
+		text-align: center;
 	}
 
 	h2 {
 		font-size: var(--text-xl);
-		text-align: center;
-		max-width: 15ch;
+		max-width: 20ch;
+	}
+
+	p {
+		font-size: var(--text-base);
+		max-width: 50ch;
 	}
 
 	@media (min-width: 50em) {
@@ -36,11 +42,16 @@ import Icon from './Icon.astro';
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: space-between;
+			text-align: left;
 		}
 
 		h2 {
 			font-size: var(--text-3xl);
-			text-align: left;
+		}
+
+		p {
+			font-size: var(--text-lg);
+			max-width: 40ch;
 		}
 	}
 </style>
